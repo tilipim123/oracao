@@ -1,0 +1,2 @@
+class Dawn < ApplicationRecord
+end

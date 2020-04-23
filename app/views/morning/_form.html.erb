@@ -1,0 +1,22 @@
+<%= bootstrap_form_with(model: @morning, url: morning_path, local: true) do |form| %>
+
+<% if @morning.errors.any? %>
+<div id="error_explanation">
+  <h2>
+    <%= pluralize(@morning.errors.count, "error") %> prohibited
+    this morning from being saved:
+  </h2>
+  <ul>
+    <% @morning.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+<%= form.text_field :name, placeholder: "Nome", hide_label: true, required: true%>
+<%= form.select :hour, [["Escolha um Horário", 0], ["06:00 às 06:30", "um"], ["06:30 às 07:00", "dois"], ["07:00 às 07:30", "tres"], ["07:30 às 08:00", "quatro"], ["08:00 às 08:30", "cinco"], ["08:30 às 09:00", "seis"],["09:00 às 09:30", "sete"], ["09:30 às 10:00", "oito"], ["10:00 às 10:30", "nove"], ["10:30 às 11:00", "dez"], ["11:00 às 11:30", "onze"], ["11:30 às 12:00", "doze"]], { hide_label: true, required: true, wrapper: { class: 'has-warning', data: { foo: 'bar' } } }, { class: "selectpicker" } %>
+<%= form.submit "Registrar horário", class:"btn btn-primary", data: { disable_with: 'Registrando....' } %>
+
+<% end %>

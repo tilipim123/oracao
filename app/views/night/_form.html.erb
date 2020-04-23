@@ -1,0 +1,22 @@
+<%= bootstrap_form_with(model: @night, url: night_path, local: true) do |form| %>
+
+<% if @night.errors.any? %>
+<div id="error_explanation">
+  <h2>
+    <%= pluralize(@anight.errors.count, "error") %> prohibited
+    this night from being saved:
+  </h2>
+  <ul>
+    <% @night.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+<%= form.text_field :name, placeholder: "Nome", hide_label: true, required: true %>
+<%= form.select :hour, [["Escolha um Horário", 0], ["18:00 às 18:30", "um"], ["18:30 às 19:00", "dois"], ["19:00 às 19:30", "tres"], ["19:30 às 20:00", "quatro"], ["20:00 às 20:30", "cinco"], ["20:30 às 21:00", "seis"],["21:00 às 21:30", "sete"], ["21:30 às 22:00", "oito"], ["22:00 às 22:30", "nove"], ["22:30 às 23:00", "dez"], ["23:00 às 23:30", "onze"], ["23:30 às 00:00", "doze"]], { hide_label: true, required: true, wrapper: { class: 'has-warning', data: { foo: 'bar' } } }, { class: "selectpicker" } %>
+<%= form.submit "Registrar horário", class:"btn btn-primary", data: { disable_with: 'Registrando....' } %>
+
+<% end %>

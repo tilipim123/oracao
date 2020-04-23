@@ -1,0 +1,120 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Oração</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/aos.min.css">
+  <link rel="stylesheet" href="css/hamburgers/hamburgers.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="css/animsition.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+ <!-- Header -->
+ <header class="masthead">
+  <div class="container d-flex h-100">
+    <div class="mx-auto text-center">
+      <h1 class="mx-auto my-0 "
+      ">ORAÇÃO CONTÍNUA</h1>
+      <h2 class="text-white-50 mx-auto mt-2 mb-5">IGREJA EM GOIÂNIA#PERSEVERANÇA</h2>
+      <br>
+      <br>
+      <section class="templateux-portfolio-overlap" id="next">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6" data-aos="fade-up">
+              <a class="project animsition-link" href="#">
+                <figure>
+                  <img src="https://imgur.com/TeIR4Tj.png" alt="Free Template" class="img-fluid">  
+                </figure>
+                <div class="project-hover">
+                  <div class="project-hover-inner">
+                    <h2>GFCM</h2>
+                    <span>Luiz Carlos / Ronaldo</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-6" data-aos="fade-up">
+              <form>
+                <div class="row">
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="Nome">
+
+                  </div>
+                </div>
+                <label for="inputState"></label>
+                <select id="inputState" class="form-control">
+                  <option selected>Escolha um Horário</option>
+                  <option>06:00 às 06:30</option>
+                  <option>06:30 às 07:00</option>
+                  <option>07:00 às 07:30</option>
+                  <option>07:30 às 08:00</option>
+                  <option>08:00 às 08:30</option>
+                  <option>08:30 às 09:00</option>
+                  <option>09:00 às 09:30</option>
+                  <option>09:30 às 10:00</option>
+                  <option>10:00 às 10:30</option>
+                  <option>10:30 às 11:00</option>
+                  <option>11:00 às 11:30</option>
+                  <option>11:30 às 12:00</option>
+                </select>
+                <br>
+                <button type="submit" class="btn btn-primary">Registrar horário</button>
+              </form>
+
+              <%= form_with do |form| %>
+              
+              <% if @afternoon.errors.any? %>
+              <div id="error_explanation">
+                <h2>
+                  <%= pluralize(@afternoon.errors.count, "error") %> prohibited
+                  this afternoon from being saved:
+                </h2>
+                <ul>
+                  <% @afternoon.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+              <% end %>
+              
+              <p>
+                <%= form.label :name %><br>
+                <%= form.text_field :name %>
+              </p>
+              
+              <p>
+                <%= form.label :hour %><br>
+                <%= form.text_area :hour %>
+              </p>
+              
+              <p>
+                <%= form.submit %>
+              </p>
+              
+              <% end %>
+            </div>
+
+          </div>
+
+          <!-- END row -->
+        </div>
+      </section>
+
+    </div>
+  </div>
+</header>
+
+
+<script src="js/scripts-all.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
