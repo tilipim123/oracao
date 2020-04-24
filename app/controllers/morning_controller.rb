@@ -2,7 +2,6 @@ class MorningController < ApplicationController
 
 	def index
 		@mornings = Morning.all
-		puts"#{@morning}".on_red
 	end
 
 	def show
@@ -16,7 +15,6 @@ class MorningController < ApplicationController
 
 	def create
 		@morning = Morning.create(morning_params)
-        
 		redirect_to morning_path
 	end
 
