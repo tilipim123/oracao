@@ -3,6 +3,7 @@ class CreateDawns < ActiveRecord::Migration[6.0]
     create_table :dawns do |t|
       t.string :name
       t.string :hour
+      t.string :gfcm
 
       t.timestamps
     end

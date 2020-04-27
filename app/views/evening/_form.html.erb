@@ -1,22 +1,11 @@
-<%= bootstrap_form_with(model: @afternoon, url: afternoon_path, local: true) do |form| %>
-
-<% if @afternoon.errors.any? %>
-<div id="error_explanation">
-  <h2>
-    <%= pluralize(@afternoon.errors.count, "error") %> prohibited
-    this afternoon from being saved:
-  </h2>
-  <ul>
-    <% @afternoon.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
-
+<%= bootstrap_form_with(model: @evening, url: evening_path, local: true) do |form| %>
 
 <%= form.text_field :name, placeholder: "Nome", hide_label: true, required: true %>
+
+<%= form.select :gfcm, [["Qual o seu GFCM?", 0], ["Luiz Carlos | Ronaldo", "um"], ["Paulo Almeida | Sinésio | Caetano", "dois"], ["Neto | Marcelo | Alexandre | Doriedson | Wanderlan", "tres"], ["Cedro | João Carlos | Natal | Alan", "quatro"]], { hide_label: true, required: true, wrapper: { class: 'has-warning', data: { foo: 'bar' } } }, { class: "selectpicker" } %>
+
 <%= form.select :hour, [["Escolha um Horário", 0], ["12:00 às 12:30", "um"], ["12:30 às 13:00", "dois"], ["13:00 às 13:30", "tres"], ["13:30 às 14:00", "quatro"], ["14:00 às 14:30", "cinco"], ["14:30 às 15:00", "seis"],["15:00 às 15:30", "sete"], ["15:30 às 16:00", "oito"], ["16:00 às 16:30", "nove"], ["16:30 às 17:00", "dez"], ["17:00 às 17:30", "onze"], ["17:30 às 18:00", "doze"]], { hide_label: true, required: true, wrapper: { class: 'has-warning', data: { foo: 'bar' } } }, { class: "selectpicker" } %>
+
 <%= form.submit "Registrar horário", class:"btn btn-primary", data: { disable_with: 'Registrando....' } %>
 
 <% end %>

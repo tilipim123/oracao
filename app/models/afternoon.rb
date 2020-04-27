@@ -1,2 +1,0 @@
-class Afternoon < ApplicationRecord
-end
